@@ -5,7 +5,7 @@ export default class LineString implements Geometry {
   private points?: Point[];
 
   constructor(points?: Point[]) {
-    this.points = points || [] ;
+    this.points = points || [];
   }
 
   getNumPoints(): Number {
@@ -13,20 +13,26 @@ export default class LineString implements Geometry {
   }
 
   isEmpty(): boolean {
-      return this.points.length==0;
+    return this.points.length == 0;
   }
-  
+
   translate(dx: number, dy: number) {
     for (let point of this.points) {
-      point.translate(dx,dy)
+      point.translate(dx, dy)
     }
   }
 
-  getType(): string {
-      return "LineString"
+  clone(): LineString {
+    const obj = new LineString()
+    obj.points = this.points
+    return obj;
   }
 
-  getPointN(n: number) : Point {
+  getType(): string {
+    return "LineString"
+  }
+
+  getPointN(n: number): Point {
     return this.points[n];
   }
 

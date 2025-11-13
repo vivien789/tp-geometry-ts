@@ -9,7 +9,7 @@ export default class Point implements Geometry {
   }
 
   getCoordinate(): Coordinate {
-    return this.coordinate ;
+    return this.coordinate;
   }
 
   getType(): string {
@@ -17,12 +17,18 @@ export default class Point implements Geometry {
   }
 
   isEmpty(): boolean {
-      return this.coordinate.length==0;
+    return this.coordinate.length == 0;
   }
 
   translate(dx: number, dy: number) {
     this.coordinate[0] = dx + this.coordinate[0];
     this.coordinate[1] = dy + this.coordinate[1];
+  }
+
+  clone(): Point {
+    const obj = new Point()
+    obj.coordinate = this.coordinate
+    return obj;
   }
 
   x(): number {
