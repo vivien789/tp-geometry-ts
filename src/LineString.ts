@@ -5,11 +5,15 @@ export default class LineString implements Geometry {
   private points?: Point[];
 
   constructor(points?: Point[]) {
-    this.points = points ;
+    this.points = points || [] ;
   }
 
   getNumPoints(): Number {
-    return this.points ? this.points.length : 0;
+    return this.points.length;
+  }
+
+  isEmpty(): boolean {
+      return this.points.length==0;
   }
 
   getType(): string {
