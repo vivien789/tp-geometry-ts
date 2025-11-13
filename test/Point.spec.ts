@@ -30,6 +30,7 @@ describe("test Point", () => {
     it("should clone point", () => {
         const p = new Point([3.0, 4.0]);
         const q = p.clone();
+        expect(q.getCoordinate()).to.deep.equal([3.0, 4.0]);
     });
 
 });
