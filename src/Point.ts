@@ -1,14 +1,19 @@
 import Coordinate from "./Coordinate";
+import Geometry from "./Geometry";
 
-export default class Point {
+export default class Point implements Geometry {
   private coordinate?: Coordinate;
 
   constructor(coordinate?: Coordinate) {
-    this.coordinate = coordinate ;
+    coordinate ? this.coordinate = coordinate : undefined;
   }
 
   getCoordinate(): Coordinate {
-    return this.coordinate;
+    return this.coordinate ? this.coordinate : undefined;
+  }
+
+  getType(): string {
+    return "Point"
   }
 
   x(): number {
