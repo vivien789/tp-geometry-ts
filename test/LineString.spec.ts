@@ -39,4 +39,12 @@ describe("test Linestring", () => {
         const m = l.clone();
     });
 
+     it("should get enveloppe", () => {
+        const a = new Point([3.0, 4.0]);
+        const b = new Point([5.0, 6.0]);
+        const l = new LineString([a, b]);
+        const m = l.getEnveloppe();
+    });
+
+
 });

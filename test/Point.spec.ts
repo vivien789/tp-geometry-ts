@@ -33,5 +33,11 @@ describe("test Point", () => {
         expect(q.getCoordinate()).to.deep.equal([3.0, 4.0]);
     });
 
+    it("should get enveloppe point", () => {
+        const p = new Point([3.0, 4.0]);
+        const q = p.getEnveloppe();
+        expect(q.toString()).to.equal(`Enveloppe([3,4], [3,4])`)
+    });
+
 });
 

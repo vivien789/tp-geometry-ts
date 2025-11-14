@@ -1,6 +1,5 @@
 import "mocha";
 import { expect } from "chai";
-import Enveloppe from "../src/Enveloppe"
 import EnveloppeBuilder from "../src/EnveloppeBuilder"
 
 describe("test Enveloppe Builder", () => {
