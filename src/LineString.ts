@@ -10,7 +10,7 @@ export default class LineString implements Geometry {
     this.points = points || [];
   }
 
-  getNumPoints(): Number {
+  getNumPoints(): number {
     return this.points.length;
   }
 
