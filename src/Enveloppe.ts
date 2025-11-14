@@ -30,6 +30,6 @@ export default class Enveloppe {
     }
 
     toString(): String {
-        return `Enveloppe[(${this.bottomLeft}), (${this.topRight})]`;
+        return `Enveloppe([${this.bottomLeft}], [${this.topRight}])`;
     }
 }

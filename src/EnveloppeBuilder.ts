@@ -14,21 +14,21 @@ export default class EnveloppeBuilder {
     }
 
     build(): Enveloppe {
-        let xmin = this.coordinates[0][0];
-        let ymin = this.coordinates[0][1];
-        let xmax = xmin + 1;
-        let ymax = ymin + 1;
+        let xmin = this.coordinates[1][0];
+        let ymin = this.coordinates[1][1];
+        let xmax = this.coordinates[1][0];;
+        let ymax = this.coordinates[1][1];;
         for (let coor of this.coordinates) {
-            if (coor[0] < xmin) {
+            if (coor[0] <= xmin) {
                 xmin = coor[0];
             }
-            else if (coor[0] > xmax) {
+            else if (coor[0] >= xmax) {
                 xmax = coor[0];
             }
-            else if (coor[1] < ymin) {
+            if (coor[1] <= ymin) {
                 ymin = coor[1];
             }
-            else if (coor[1] > ymax) {
+            else if (coor[1] >= ymax) {
                 ymax = coor[1];
             }
         }

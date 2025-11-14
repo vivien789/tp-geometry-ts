@@ -5,17 +5,19 @@ import EnveloppeBuilder from "../src/EnveloppeBuilder"
 
 describe("test Enveloppe Builder", () => {
     it("test enveloppe builder with coordinates", () => {
-        const b = new EnveloppeBuilder();
+        const b = new EnveloppeBuilder([1.0,2.0]);
         {
             b.insert([0.0,1.0]);
             b.build();
         }
-        
-        //expect(result.toString()).to.equal(`Enveloppe[(0,1), (0,1)]`)
-
-        //b.insert([2.0,0.0]);
-        //b.insert([1.0,3.0]);
-        
+        {
+            b.insert([2.0,0.0]);
+            b.build();
+        }
+        {
+            b.insert([0.0,3.0]);
+            b.build();
+        }       
         
     });
 

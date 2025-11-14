@@ -14,7 +14,7 @@ describe("test Enveloppe", () => {
         expect(e.getYmin()).to.deep.equal(4.0);
         expect(e.getXmax()).to.deep.equal(5.0);
         expect(e.getYmax()).to.deep.equal(6.0);
-        expect(e.toString()).to.equal(`Enveloppe[(3,4), (5,6)]`)
+        expect(e.toString()).to.equal(`Enveloppe([3,4], [5,6])`)
     });
 
 });
