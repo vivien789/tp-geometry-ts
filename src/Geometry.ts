@@ -1,5 +1,5 @@
 import Enveloppe from "../src/Enveloppe"
-import EnveloppeBuilder from "../src/EnveloppeBuilder"
+import GeometryVisitor from "./GeometryVisitor";
 
 export default interface Geometry {
     getType(): string;
@@ -7,4 +7,5 @@ export default interface Geometry {
     translate(dx: number, dy: number);
     clone(): Geometry;
     getEnveloppe(): Enveloppe;
+    accept(visitor: GeometryVisitor);
 }
