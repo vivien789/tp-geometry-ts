@@ -3,6 +3,7 @@ import Geometry from "./Geometry";
 import Enveloppe from "../src/Enveloppe"
 import EnveloppeBuilder from "../src/EnveloppeBuilder"
 import GeometryVisitor from "./GeometryVisitor";
+import WktVisitor from "./WktVisitor";
 
 export default class LineString implements Geometry {
   private points?: Point[];
@@ -51,6 +52,10 @@ export default class LineString implements Geometry {
   accept(visitor: GeometryVisitor){
     visitor.visitLineString(this);
   }
-  
 
+  asText(): string {
+    const visitor = new WktVisitor()
+    this.accept(visitor)
+    return visitor.getResult();
+  }
 }

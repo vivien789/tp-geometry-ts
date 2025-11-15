@@ -1,8 +1,10 @@
 import Coordinate from "./Coordinate";
 import Geometry from "./Geometry";
+import AbstractGeometry from "./AbstractGeometry";
 import Enveloppe from "../src/Enveloppe"
 import EnveloppeBuilder from "../src/EnveloppeBuilder"
 import GeometryVisitor from "./GeometryVisitor";
+import WktVisitor from "./WktVisitor";
 
 export default class Point implements Geometry {
   private coordinate?: Coordinate;
@@ -51,6 +53,12 @@ export default class Point implements Geometry {
 
   accept(visitor: GeometryVisitor){
     visitor.visitPoint(this);
+  }
+
+  asText(): string {
+    const visitor = new WktVisitor()
+    this.accept(visitor)
+    return visitor.getResult();
   }
 
 }

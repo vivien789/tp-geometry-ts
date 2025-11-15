@@ -39,5 +39,11 @@ describe("test Point", () => {
         expect(q.toString()).to.equal(`Enveloppe([3,4], [3,4])`)
     });
 
+    it("should return point in text wkt", () => {
+        const p = new Point([3.0, 4.0]);
+        const wkt = p.asText();
+        expect(wkt).to.equal(`POINT(3.0 4.0)`)
+    });
+
 });
 

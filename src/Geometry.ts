@@ -8,4 +8,5 @@ export default interface Geometry {
     clone(): Geometry;
     getEnveloppe(): Enveloppe;
     accept(visitor: GeometryVisitor);
+    asText(): string;
 }
